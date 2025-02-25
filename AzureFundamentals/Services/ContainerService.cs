@@ -41,7 +41,7 @@ namespace AzureFundamentals.Services
         {
             List<string> containerAndBlobNames = new();
             containerAndBlobNames.Add("Account Name : " + _blobClient.AccountName);
-            containerAndBlobNames.Add("--------------------------------------------------------------------------------");
+            containerAndBlobNames.Add("-------------------------------------------------------------");
             await foreach (BlobContainerItem blobContainerItem in _blobClient.GetBlobContainersAsync())
             {
                 containerAndBlobNames.Add("--"+blobContainerItem.Name);
@@ -49,9 +49,19 @@ namespace AzureFundamentals.Services
 
                 await foreach(BlobItem blobItem in _blobContainer.GetBlobsAsync())
                 {
-                    containerAndBlobNames.Add("------"+blobItem.Name);
+                    //get metadata
+                    var blobClient = _blobContainer.GetBlobClient(blobItem.Name);
+                    BlobProperties blobProperties = await blobClient.GetPropertiesAsync();
+                    string blobToAdd = blobItem.Name;
+                    if (blobProperties.Metadata.ContainsKey("title"))
+                    {
+                        blobToAdd += "(" + blobProperties.Metadata["title"] + ")";
+                    }
+
+
+                    containerAndBlobNames.Add("------"+ blobToAdd);
                 }
-                containerAndBlobNames.Add("------------------------------------------------------------------------------");
+                containerAndBlobNames.Add("--------------------------------------------------------------------");
 
             }
             return containerAndBlobNames;

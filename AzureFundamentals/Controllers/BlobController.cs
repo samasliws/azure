@@ -1,4 +1,5 @@
-﻿using AzureFundamentals.Services;
+﻿using AzureFundamentals.Models;
+using AzureFundamentals.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AzureFundamentals.Controllers
@@ -24,7 +25,7 @@ namespace AzureFundamentals.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddFile(string containerName, IFormFile file)
+        public async Task<IActionResult> AddFile(string containerName, Blob blob, IFormFile file)
         {
             if (file == null || file.Length < 1) return View();
 
