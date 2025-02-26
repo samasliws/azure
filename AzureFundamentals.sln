@@ -1,9 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35707.178 d17.12
+VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureFundamentals", "AzureFundamentals\AzureFundamentals.csproj", "{6D0F6BE0-BF9C-4D8B-AEF0-A727CACE6A4F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureBlobStorage", "AzureFundamentals\AzureBlobStorage.csproj", "{6D0F6BE0-BF9C-4D8B-AEF0-A727CACE6A4F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureFunctionTangy.Web", "AzureFunctionTangy.Web\AzureFunctionTangy.Web.csproj", "{5BBA1737-5C26-4D99-ADD8-9DF9E8566AE0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AzureBlobExample", "AzureBlobExample", "{00C25297-2BD7-46BE-AD36-5EF95F2A0267}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AzureFunctionExample", "AzureFunctionExample", "{6E809E4D-1E43-4B09-AEAF-C66E5B180B35}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +21,16 @@ Global
 		{6D0F6BE0-BF9C-4D8B-AEF0-A727CACE6A4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D0F6BE0-BF9C-4D8B-AEF0-A727CACE6A4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D0F6BE0-BF9C-4D8B-AEF0-A727CACE6A4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BBA1737-5C26-4D99-ADD8-9DF9E8566AE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BBA1737-5C26-4D99-ADD8-9DF9E8566AE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BBA1737-5C26-4D99-ADD8-9DF9E8566AE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BBA1737-5C26-4D99-ADD8-9DF9E8566AE0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6D0F6BE0-BF9C-4D8B-AEF0-A727CACE6A4F} = {00C25297-2BD7-46BE-AD36-5EF95F2A0267}
+		{5BBA1737-5C26-4D99-ADD8-9DF9E8566AE0} = {6E809E4D-1E43-4B09-AEAF-C66E5B180B35}
 	EndGlobalSection
 EndGlobal
